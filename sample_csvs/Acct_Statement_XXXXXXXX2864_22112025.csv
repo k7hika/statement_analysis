@@ -1,0 +1,94 @@
+  Date     ,Narration                                                                                                                ,Value Dat,Debit Amount       ,cr,Chq/Ref Number   ,Closing Balance
+ 01/07/25  ,IB FUNDS TRANSFER DR-50100278019980-KARTHIKA MOHANKUMAR                                                                  ,01-07-2025,10000,0,MB01141223505T44       ,13378.01
+ 01/07/25  ,IB FUNDS TRANSFER DR-50100278019980-KARTHIKA MOHANKUMAR                                                                  ,01-07-2025,5000,0,MB01201756991T22       ,8378.01
+ 02/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997@OKAXIS-UTIB0000869-107386249898-UPI                                                 ,02-07-2025,7500,0,1.07E+11,878.01
+ 03/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997@OKHDFCBANK-HDFC0001487-107439643552-UPI                                             ,03-07-2025,0,6000,1.07E+11,6878.01
+ 05/07/25  ,UPI-KISMAT BIRIYANI-O1KB@FBL-FDRL0001024-107571026013-UPI                                                                ,05-07-2025,252,0,1.08E+11,6626.01
+ 05/07/25  ,UPI-CSB ONE CREDIT CARD-ONECARDCSB@YBL-YESB0YBLUPI-107594965066-PAYMENT FOR AOCCSB                                       ,05-07-2025,6261.94,0,1.08E+11,364.07
+ 07/07/25  ,FEE-ATM CASH(1TXN)29/06/25-AOR2618805241772                                                                              ,07-07-2025,27.14,0,AOR2618805241772       ,336.93
+ 08/07/25  ,RDA FIR INW-R62499380552-AYUSHI CHHALLANY                                                                                ,08-07-2025,0,7358,0000I18925027449       ,7694.93
+ 10/07/25  ,UPI-ARVEE BAKERY AND SUP-WORLDLINE.65077012@BARODAMPAY-BARB0BANEAS-107874614652-UPI                                      ,10-07-2025,445,0,1.08E+11,7249.93
+ 10/07/25  ,POS 416021XXXXXX4126 PAYPAL *EXPRESSV                                                                                    ,10-07-2025,1167.72,0,5.19E+11,6082.21
+ 11/07/25  ,POS 416021XXXXXX4126 UPWORK -82572551                                                                                    ,11-07-2025,1139.71,0,5.19E+11,4942.5
+ 11/07/25  ,RDA FIR INW-R20036204282-PARAMPREET KAUR BRAR                                                                            ,11-07-2025,0,15206.4,0000I19225033134       ,20148.9
+ 11/07/25  ,UPI-KAYKEEN-PAYTM.S1788VA@PTY-YESB0MCHUPI-107939123893-UPI                                                               ,11-07-2025,210,0,1.08E+11,19938.9
+ 11/07/25  ,NWD-416021XXXXXX4126-48430011-CHENNITHALA                                                                                ,11-07-2025,1000,0,5.19E+11,18938.9
+ 12/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,12-07-2025,1000,0,5.19E+11,17938.9
+ 13/07/25  ,ME DC SI 416021XXXXXX4126 TATA PLAY LIMITED CYBS                                                                         ,13-07-2025,199,0,5.19E+11,17739.9
+ 13/07/25  ,POS 416021XXXXXX4126 DROPBOX                                                                                             ,13-07-2025,1030.39,0,5.19E+11,16709.51
+ 14/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,14-07-2025,3800,0,5.20E+11,12909.51
+ 14/07/25  ,UPI-GOOGLE INDIA DIGITAL-GPAY-UTILITY@OKPAYAXIS-UTIB0000553-108090419248-UPI                                             ,14-07-2025,3702,0,1.08E+11,9207.51
+ 14/07/25  ,UPI-CHINAMMA-RINCYMONACHAN91@OKAXIS-UBIN0903914-108108901214-UPI                                                         ,14-07-2025,150,0,1.08E+11,9057.51
+ 15/07/25  ,POS 416021XXXXXX4126 PAYPAL *MONTANOF                                                                                    ,15-07-2025,818.04,0,5.20E+11,8239.47
+ 15/07/25  ,IB FUNDS TRANSFER CR-50100278019980-KARTHIKA MOHANKUMAR                                                                  ,15-07-2025,0,100000,MB15142612240T42       ,108239.47
+ 15/07/25  ,UPI-PREMKUMAR GOVINDA PI-PKDEPL-1@OKHDFCBANK-HDFC0001712-108140539008-UPI                                                ,15-07-2025,50000,0,1.08E+11,58239.47
+ 15/07/25  ,UPI-PREMKUMAR GOVINDA PI-PKDEPL-1@OKHDFCBANK-HDFC0001712-108141685365-UPI                                                ,15-07-2025,45000,0,1.08E+11,13239.47
+ 15/07/25  ,50100283215052-TPT-PAYM-RUGMINIYAMMA                                                                                     ,15-07-2025,0,25000,569985840,38239.47
+ 15/07/25  ,50100283215052-TPT-PAYME-RUGMINIYAMMA                                                                                    ,15-07-2025,0,25000,569994626,63239.47
+ 15/07/25  ,50200073168660-TPT-BB-SNAPFLAIR                                                                                          ,15-07-2025,50000,0,277733738,13239.47
+ 15/07/25  ,IB FUNDS TRANSFER CR-50100278019980-KARTHIKA MOHANKUMAR                                                                  ,15-07-2025,0,5000,MB15162108160T46       ,18239.47
+ 15/07/25  ,IMPS-519616337861-KARTHIKA MOHANKUMAR-UTIB-XXXXXXXXXXX4936-CC                                                            ,15-07-2025,10000,0,5.20E+11,8239.47
+ 15/07/25  ,FEE-ATM CASH(2TXN)12/07/25-AOR2619624771185                                                                              ,15-07-2025,54.28,0,AOR2619624771185       ,8185.19
+ 15/07/25  ,POS 416021XXXXXX4126 PAYPAL *GEULLA85                                                                                    ,15-07-2025,6025.29,0,5.20E+11,2159.9
+ 15/07/25  ,UPI-SINU MOL S-SINURAJESH82@OKICICI-ICIC0000010-108157432206-UPI                                                         ,15-07-2025,55,0,1.08E+11,2104.9
+ 15/07/25  ,RDA FIR INW-R51021026411-ZAYED AMAJD SYED                                                                                ,15-07-2025,0,5560,0000I19625032070       ,7664.9
+ 16/07/25  ,.DC INTL POS TXN MARKUP+ST 220625 220625-MIR2618704505757                                                                ,16-07-2025,100.28,0,MIR2618704505757       ,7564.62
+ 16/07/25  ,.DC INTL POS TXN MARKUP+ST 220625 220625-MIR2618704507121                                                                ,16-07-2025,721.64,0,MIR2618704507121       ,6842.98
+ 16/07/25  ,.DC INTL POS TXN MARKUP+ST 260625 260625-MIR2619107071522                                                                ,16-07-2025,408.81,0,MIR2619107071522       ,6434.17
+ 16/07/25  ,.DC INTL POS TXN MARKUP+ST 240625 240625-MIR2618704649617                                                                ,16-07-2025,358.81,0,MIR2618704649617       ,6075.36
+ 16/07/25  ,UPI-KAYKEEN-PAYTM.S1788VA@PTY-YESB0MCHUPI-108219693237-UPI                                                               ,16-07-2025,210,0,1.08E+11,5865.36
+ 16/07/25  ,POS 416021XXXXXX4126 PAYPAL *MIRANGIN                                                                                    ,16-07-2025,2504.54,0,5.20E+11,3360.82
+ 17/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997@OKAXIS-UTIB0000869-519895791747-UPI                                                 ,17-07-2025,0,800,5.20E+11,4160.82
+ 17/07/25  ,FEE-ATM CASH(1TXN)14/07/25-AOR2619835313673                                                                              ,17-07-2025,27.14,0,AOR2619835313673       ,4133.68
+ 17/07/25  ,NWD-416021XXXXXX4126-05626084-CHENGANNUR                                                                                 ,17-07-2025,3500,0,5.20E+11,633.68
+ 17/07/25  ,RDA FIR INW-R51316726391-DIKSHA SHARMA                                                                                   ,17-07-2025,0,22048,0000I19825018820       ,22681.68
+ 17/07/25  ,IB FUNDS TRANSFER DR-50100278019980-KARTHIKA MOHANKUMAR                                                                  ,17-07-2025,2000,0,MB17183045564T44       ,20681.68
+ 18/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997-3@OKAXIS-HDFC0001487-108299326599-UPI                                               ,18-07-2025,1500,0,1.08E+11,19181.68
+ 18/07/25  ,UPI-INDIAN OIL PETROL PU-Q500141092@YBL-YESB0YBLUPI-108327155092-UPI                                                     ,18-07-2025,200,0,1.08E+11,18981.68
+ 18/07/25  ,UPI-BENNYS FAST FOOD AND-PAYTMQR5YZ94H@PTYS-YESB0PTMUPI-108327971596-UPI                                                 ,18-07-2025,140,0,1.08E+11,18841.68
+ 19/07/25  ,FEE-ATM CASH(1TXN)17/07/25-AOR2620042572272                                                                              ,19-07-2025,27.14,0,AOR2620042572272       ,18814.54
+ 20/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,20-07-2025,500,0,5.20E+11,18314.54
+ 20/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,20-07-2025,100,0,5.20E+11,18214.54
+ 20/07/25  ,UPI-KAMLAS MART PVT LTD-KAMLASMARTPVTLTD.42569259@HDFCBANK-HDFC0MERUPI-108415206174-GENERATING DYNAMIC                   ,20-07-2025,372,0,1.08E+11,17842.54
+ 20/07/25  ,UPI-KISMAT BIRIYANI-O1KB@FBL-FDRL0001024-108415432163-UPI                                                                ,20-07-2025,252,0,1.08E+11,17590.54
+ 20/07/25  ,UPI-BOOTS AND BOOTS WED-Q311933834@YBL-YESB0YBLUPI-108415613828-UPI                                                      ,20-07-2025,250,0,1.08E+11,17340.54
+ 20/07/25  ,UPI-LEKHA KUMARI-LEKHA007@FBL-FDRL0001268-108416385664-UPI                                                               ,20-07-2025,28,0,1.08E+11,17312.54
+ 20/07/25  ,RDA FIR INW-R13205471552-AYUSHI CHHALLANY                                                                                ,20-07-2025,0,10188,0000I20125014889       ,27500.54
+ 20/07/25  ,UPI-KAYKEEN-PAYTM.S1788VA@PTY-YESB0MCHUPI-108442875943-UPI                                                               ,20-07-2025,210,0,1.08E+11,27290.54
+ 21/07/25  ,POS 416021XXXXXX4126 PAYPAL *JOSEMURI                                                                                    ,21-07-2025,17338.65,0,5.20E+11,9951.89
+ 22/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,22-07-2025,500,0,5.20E+11,9451.89
+ 22/07/25  ,FEE-ATM CASH(2TXN)20/07/25-AOR2620348209776                                                                              ,22-07-2025,54.28,0,AOR2620348209776       ,9397.61
+ 23/07/25  ,FEE-ATM CASH(1TXN)22/07/25-AOR2620452145988                                                                              ,23-07-2025,27.14,0,AOR2620452145988       ,9370.47
+ 23/07/25  ,NWD-416021XXXXXX4126-NKLM6076-CHERUKOLE                                                                                  ,23-07-2025,400,0,5.20E+11,8970.47
+ 23/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,23-07-2025,500,0,5.20E+11,8470.47
+ 24/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,24-07-2025,400,0,5.21E+11,8070.47
+ 25/07/25  ,ACH D- RAZORPAYSOFTWAREPRIV-NORTHERNARQX                                                                                 ,25-07-2025,7306.9,0,1175163402,763.57
+ 25/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997@OKHDFCBANK-HDFC0001487-108673346099-UPI                                             ,25-07-2025,0,25000,1.09E+11,25763.57
+ 25/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,25-07-2025,10000,0,5.21E+11,15763.57
+ 25/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,25-07-2025,10000,0,5.21E+11,5763.57
+ 25/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,25-07-2025,4000,0,5.21E+11,1763.57
+ 25/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,25-07-2025,1000,0,5.21E+11,763.57
+ 25/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997@OKHDFCBANK-HDFC0001487-108700746696-UPI                                             ,25-07-2025,0,1500,1.09E+11,2263.57
+ 25/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,25-07-2025,1000,0,5.21E+11,1263.57
+ 28/07/25  ,FEE-ATM CASH(1TXN)23/07/25-AOR2620960412473                                                                              ,28-07-2025,27.14,0,AOR2620960412473       ,1236.43
+ 28/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,28-07-2025,1000,0,5.21E+11,236.43
+ 28/07/25  ,FEE-ATM CASH(2TXN)24/07/25-AOR2620960477841                                                                              ,28-07-2025,54.28,0,AOR2620960477841       ,182.15
+ 29/07/25  ,IB FUNDS TRANSFER CR-50100278019980-KARTHIKA MOHANKUMAR                                                                  ,29-07-2025,0,1000,MB29150856292T32       ,1182.15
+ 29/07/25  ,.DC INTL POS TXN MARKUP+ST 130725 130725-MIR2620759003859                                                                ,29-07-2025,42.56,0,MIR2620759003859       ,1139.59
+ 29/07/25  ,.IMPS P2P 519616337861#15/07/2025 150725-MIR2620759044520                                                                ,29-07-2025,5.9,0,MIR2620759044520       ,1133.69
+ 29/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,29-07-2025,1000,0,5.21E+11,133.69
+ 29/07/25  ,.DC INTL POS TXN DCC+ST 100725 100725-MIR2620657701333                                                                   ,29-07-2025,13.78,0,MIR2620657701333       ,119.91
+ 29/07/25  ,.DC INTL POS TXN MARKUP+ST 110725 110725-MIR2620657701321                                                                ,29-07-2025,47.07,0,MIR2620657701321       ,72.84
+ 29/07/25  ,FEE-ATM CASH(4TXN)25/07/25-AOR2621061327365                                                                              ,29-07-2025,72.84,0,AOR2621061327365       ,0
+ 29/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997@OKAXIS-UTIB0000869-557674009334-UPI                                                 ,29-07-2025,0,30000,5.58E+11,30000
+ 30/07/25  ,FEE-ATM CASH(1TXN)26/07/25-AOR2621162120134                                                                              ,30-07-2025,27.14,0,AOR2621162120134       ,29972.86
+ 30/07/25  ,.DC INTL POS TXN MARKUP+ST 150725 150725-MIR2621162056454                                                                ,30-07-2025,33.79,0,MIR2621162056454       ,29939.07
+ 30/07/25  ,NWD-416021XXXXXX4126-05626081-CHENGANNUR                                                                                 ,30-07-2025,500,0,5.21E+11,29439.07
+ 30/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997-3@OKAXIS-HDFC0001487-108962969888-UPI                                               ,30-07-2025,1000,0,1.09E+11,28439.07
+ 30/07/25  ,IB FUNDS TRANSFER DR-50100278019980-KARTHIKA MOHANKUMAR                                                                  ,31-07-2025,7000,0,MB30233733661T46       ,21439.07
+ 31/07/25  ,UPI-KARTHIKA MOHANKUMAR-KARTHIKAM997-3@OKAXIS-HDFC0001487-108973150483-UPI                                               ,31-07-2025,8000,0,1.09E+11,13439.07
+ 31/07/25  ,RDA FIR INW-R83262699081-ZAYED AMAJD SYED                                                                                ,31-07-2025,0,5055.3,0000I21225026663       ,18494.37
+ 31/07/25  ,FEE-ATM CASH(1TXN)28/07/25-AOR2621263247631                                                                              ,31-07-2025,27.14,0,AOR2621263247631       ,18467.23
+ 31/07/25  ,.DC INTL POS TXN MARKUP+ST 160725 160725-MIR2621262604792                                                                ,31-07-2025,103.44,0,MIR2621262604792       ,18363.79
+ 31/07/25  ,.DC INTL POS TXN MARKUP+ST 150725 150725-MIR2621262598511                                                                ,31-07-2025,248.85,0,MIR2621262598511       ,18114.94
+ 31/07/25  ,50100299800591-TPT-PAYMENT-JAMAL MOHAMMED                                                                                ,31-07-2025,0,13942,361824095,32056.94

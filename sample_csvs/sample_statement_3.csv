@@ -1,0 +1,4 @@
+Txn Date,Reference,Description,Amount,Category
+2025-01-02,IMPS/2345123456,Transfer to Raj,-10000,Transfer
+2025-01-04,UPI/9876543210,Payment to Amazon,-1200,Online Purchase
+2025-01-06,POS/1234567890,Swipe at Cafe,-350,Food & Dining

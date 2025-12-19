@@ -1,0 +1,6 @@
+Transaction_Date,Transaction Details,Amount,Type
+02/01/2025,POS Purchase - Big Bazaar,-3500,D
+03/01/2025,NEFT Received from ABC Corp,75000,C
+04/01/2025,Netflix Subscription,-499,D
+06/01/2025,Credit Card Bill Payment,-15000,D
+07/01/2025,Interest Received,250,C
