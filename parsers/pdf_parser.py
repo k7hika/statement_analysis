@@ -95,30 +95,3 @@ def parse_pdf(path):
     return parse_value(final_record)
 pdf_data=parse_pdf('../sample_pdfs/Account_stmt_XX4936_12122025.pdf')
 print(pdf_data)
-
-# import os
-# import tabula
-#
-# pdf = r"D:\PycharmProjects\bank analysis updated\sample_pdfs\Account_stmt_XX4936_12122025.pdf"
-#
-# # optional: force PATH/JAVA_HOME for this run (safe)
-# os.environ["JAVA_HOME"] = r"C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot"
-# os.environ["PATH"] = os.environ["JAVA_HOME"] + r"\bin;" + os.environ.get("PATH","")
-#
-# print("java ok (from Python):")
-# os.system("java -version")
-#
-# # try reading
-# try:
-#     dfs = tabula.read_pdf(pdf, pages="1", multiple_tables=True)
-#     print("tables found:", len(dfs))
-#     for i, df in enumerate(dfs):
-#         print(f"--- TABLE {i} ---")
-#         print(df.head())
-#         print(df.columns.tolist())
-#     df = dfs[0]
-#     print(df)
-#     print(df[["Tran Date","Particulars","Debit"]].head(20).to_string())
-# except Exception as e:
-#     print("TABULA ERROR:", repr(e))
-
