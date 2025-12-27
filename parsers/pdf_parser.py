@@ -12,36 +12,6 @@ sample_headers = {"date": ["date", "txn_date", "transaction_date","tran_date"],
                       "balance": ["balance", "closing_balance", "available_balance"],
                       "description": ["narration", "description", "remarks", "particulars"],
                       "ref_number": ["ref_no", "reference", "chq_no", "cheque_no", 'chq/ref_number']}
-# def parse_value(final_record):
-#
-#     for idx,reco in enumerate(final_record,start=1):
-#         for field in ['ref_number','description']:
-#             if not reco[field].strip():
-#                 reco[field]=None
-#         for field in ['debit','credit','balance']:
-#             negat=False
-#             try:
-#                 reco[field]=str(reco[field])
-#                 if reco[field].startswith('(') and reco[field].endswith(')'):
-#                     negat=True
-#                 reco[field]=float(re.sub(r'[^0-9-+.]','',reco[field]))
-#                 if negat:
-#                     reco[field]=-1*reco[field]
-#             except (KeyError,ValueError,TypeError):
-#                 if field =='balance':
-#                     reco[field]=None
-#                 else:
-#                     reco[field]=0.00
-#         if reco['debit']==0 and reco['credit']==0:
-#             logger.info(f"No credit and  debit entry in row number {idx}  and row is {reco}")
-#             continue
-#             # raise ValueError("invalid credit or debit are zero in csv file ")
-#         reco['amount']=reco['credit']-reco['debit']
-#         reco.pop('debit',None)
-#         reco.pop('credit',None)
-#     return final_record
-# checks=re.compile(r'^(0[1-9]|[12][0-9]|3[01])[\/\-.](0[1-9]|1[0-2])[\/\-.](\d{4})')
-# def parse_pdf(path):
 def header_detection(pdf_file,sample_headers):
     """
     detect table headers
