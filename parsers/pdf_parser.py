@@ -4,14 +4,19 @@ import logging
 import pandas as pd
 logging.basicConfig(level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
 logger = logging.getLogger(__name__)
-date_check=re.compile(r'^(0[1-9]|[1,2][0-9]|[3][01])[\/\-.](0[1-9]|1[0-2])[\/\-.](\d{4})')
-file_path='../sample_pdfs/Account_stmt_XX4936_12122025.pdf'
+# date_check=re.compile(r'^(0[1-9]|[1,2][0-9]|[3][01])[\/\-.](0[1-9]|1[0-2])[\/\-.](\d{4})')
+date_check=re.compile(r'^(0[1-9]|[1,2][0-9]|[3][01])[\/\-.\" "](0[1-9]|1[0-2]|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|january|february|march|april|june|july|august|september|october|november|december)[\/\-.\" "](\d{4})',
+                      re.IGNORECASE)
+# file_path='../sample_pdfs/Account_stmt_XX4936_12122025.pdf'
+# file_path='../sample_pdfs/eStatement.pdf'
+# file_path='../sample_pdfs/Acct_Statement_XX2864_07122025.pdf'
+file_path='../sample_pdfs/0269_29122025113251_unlocked.pdf'
 sample_headers = {"date": ["date", "txn_date", "transaction_date","tran_date"],
                       "debit": ["debit", "debit_amount", "withdrawal", "dr"],
                       "credit": ["credit", "credit_amount", "deposit", "cr"],
                       "balance": ["balance", "closing_balance", "available_balance"],
-                      "description": ["narration", "description", "remarks", "particulars"],
-                      "ref_number": ["ref_no", "reference", "chq_no", "cheque_no", 'chq/ref_number']}
+                      "description": ["narration", "description", "remarks", "particulars","details"],
+                      "ref_number": ["ref_no", "reference", "chq_no", "cheque_no", 'chq/ref_number','Ref No./Cheque']}
 def header_detection(pdf_file,sample_headers):
     """
     detect table headers
@@ -26,9 +31,11 @@ def header_detection(pdf_file,sample_headers):
             continue
         if tabl:
             for line in tabl:
+                print(line)
                 temp_header = []
                 temp_header_index = []
                 check_header = [re.sub(r'\s+', '_', (h or '').strip().lower()) for h in line]
+                print(check_header)
                 for inde, da in enumerate(check_header):
                     for k, v in sample_headers.items():
                         if da in v:
@@ -136,7 +143,7 @@ def csv_conversion(final_parsedata): #csv conversion
     df.to_csv("pdf_data.csv",index=False)
 def main():
     final_parsedata=parse_pdf(file_path)
-    print(final_parsedata[0:2])
+    print(final_parsedata)
     csv_conversion(final_parsedata)
 if __name__ == '__main__':
     main()
