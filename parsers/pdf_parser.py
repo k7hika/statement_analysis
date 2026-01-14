@@ -7,10 +7,10 @@ logger = logging.getLogger(__name__)
 # date_check=re.compile(r'^(0[1-9]|[1,2][0-9]|[3][01])[\/\-.](0[1-9]|1[0-2])[\/\-.](\d{4})')
 date_check=re.compile(r'^(0[1-9]|[1,2][0-9]|[3][01])[\/\-.\" "](0[1-9]|1[0-2]|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|january|february|march|april|june|july|august|september|october|november|december)[\/\-.\" "](\d{4})',
                       re.IGNORECASE)
-# file_path='../sample_pdfs/Account_stmt_XX4936_12122025.pdf'
-# file_path='../sample_pdfs/eStatement.pdf'
-# file_path='../sample_pdfs/Acct_Statement_XX2864_07122025.pdf'
-file_path='../sample_pdfs/0269_29122025113251_unlocked.pdf'
+file_path='../sample_pdfs/axisbank.pdf'
+# file_path='../sample_pdfs/sample_multiline.pdf'
+# file_path='../sample_pdfs/sbibank.pdf'
+# file_path='../sample_pdfs/hdfcbank.pdf'
 sample_headers = {"date": ["date", "txn_date", "transaction_date","tran_date"],
                       "debit": ["debit", "debit_amount", "withdrawal", "dr"],
                       "credit": ["credit", "credit_amount", "deposit", "cr"],
@@ -25,13 +25,13 @@ def header_detection(pdf_file,sample_headers):
     # with pdfplumber.open('../sample_pdfs/Acct_Statement_XX2864_07122025.pdf') as pdf_file:
     cleaned_header=[]
     cleaned_index=[]
+    narration_index = None
     for pagnum,page in enumerate(pdf_file.pages,start=1):
         tabl = page.extract_table()
         if not tabl:
             continue
         if tabl:
             for line in tabl:
-                print(line)
                 temp_header = []
                 temp_header_index = []
                 check_header = [re.sub(r'\s+', '_', (h or '').strip().lower()) for h in line]
@@ -41,6 +41,8 @@ def header_detection(pdf_file,sample_headers):
                         if da in v:
                             temp_header.append(da)
                             temp_header_index.append(inde)
+                            if k == 'description':
+                                narration_index = inde
                 if len(temp_header)>3:
                     cleaned_header=temp_header
                     cleaned_index=temp_header_index
@@ -48,27 +50,51 @@ def header_detection(pdf_file,sample_headers):
                     break
         if cleaned_header:
             break
-    return cleaned_header,cleaned_index
-def extract_row(pdf_file,cleaned_index,checks):
+    return cleaned_header,cleaned_index,narration_index
+def extract_row(pdf_file,cleaned_index,checks,narrat_index):
     """
     extract table rows with date column,
 
     """
+    last_record = None
     records=[]
     for page_num,page in enumerate(pdf_file.pages,start=1):
         tabl=page.extract_table()
         if not tabl:
             logger.info(f'Page {page_num} has no table')
             continue
-        for ro,line in enumerate(tabl,start=1):
+        for ro,line in enumerate(tabl):
             if not line:
                 continue
             if any(isinstance(cell,str) and checks.match(cell.strip()) for cell in line):
                     cleanedline = [line[i].strip() if line[i].strip() else '' for i in cleaned_index]
                     records.append(cleanedline)
+                    last_record=records[-1]
+            elif(narrat_index is not None
+                    and last_record is not None
+                    and narrat_index<len(line)
+                    and isinstance(line[narrat_index],str)
+                    # and all(not(line[i].strip()) for i in range(len(line)) if i != narrat_index)
+                    and line[narrat_index].strip()
+            ):
+                last_record[narrat_index]+=" "+line[narrat_index].strip()
             else:
                 logger.info(f"specific {line} in page number{page_num} with entry number {ro} has no date")
                 continue
+    # for page_num,page in enumerate(pdf_file.pages,start=1):
+    #     tabl=page.extract_table()
+    #     if not tabl:
+    #         logger.info(f'Page {page_num} has no table')
+    #         continue
+    #     for ro,line in enumerate(tabl,start=1):
+    #         if not line:
+    #             continue
+    #         if any(isinstance(cell,str) and checks.match(cell.strip()) for cell in line):
+    #                 cleanedline = [line[i].strip() if line[i].strip() else '' for i in cleaned_index]
+    #                 records.append(cleanedline)
+    #         else:
+    #             logger.info(f"specific {line} in page number{page_num} with entry number {ro} has no date")
+    #             continue
     return records
 def normalised_records(extracted_row,headers,sample_headers):
     """
@@ -91,7 +117,7 @@ def normalised_records(extracted_row,headers,sample_headers):
         raise ValueError('No description column in pdf file')
     if 'balance' not in normalised_header:
         logger.info("No balance column in pdf file")
-        raise ValueError('No balance column in pdf file')
+        # raise ValueError('No balance column in pdf file')
     if 'debit' not in normalised_header:
         logger.info("No debit column in pdf file")
         raise ValueError("No debit column in pdf file")
@@ -131,8 +157,8 @@ def parse_pdf(file_path):
     parse pdf file
     """
     with pdfplumber.open(file_path) as pdf_file:
-        headers,indexes=header_detection(pdf_file,sample_headers)
-        extracted_rows=extract_row(pdf_file,indexes,date_check)
+        headers,indexes,narrat_index=header_detection(pdf_file,sample_headers)
+        extracted_rows=extract_row(pdf_file,indexes,date_check,narrat_index)
         normalised_data=normalised_records(extracted_rows,headers,sample_headers)
     return normalised_data
 def csv_conversion(final_parsedata): #csv conversion
