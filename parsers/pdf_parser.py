@@ -7,16 +7,20 @@ logger = logging.getLogger(__name__)
 # date_check=re.compile(r'^(0[1-9]|[1,2][0-9]|[3][01])[\/\-.](0[1-9]|1[0-2])[\/\-.](\d{4})')
 date_check=re.compile(r'^(0[1-9]|[1,2][0-9]|[3][01])[\/\-.\" "](0[1-9]|1[0-2]|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|january|february|march|april|june|july|august|september|october|november|december)[\/\-.\" "](\d{4})',
                       re.IGNORECASE)
-file_path='../sample_pdfs/axisbank.pdf'
+# file_path='../sample_pdfs/544516929-ICICI-BANK-STATEMENT.pdf'
+file_path='../sample_pdfs/686976004-PUNJAB-NATIONAL-BANK-STATEMENT.pdf'
+# file_path='../sample_pdfs/axisbank.pdf'
 # file_path='../sample_pdfs/sample_multiline.pdf'
 # file_path='../sample_pdfs/sbibank.pdf'
 # file_path='../sample_pdfs/hdfcbank.pdf'
+# file_path='../sample_pdfs/686976004-PUNJAB-NATIONAL-BANK-STATEMENT.pdf'
+# file_path='../sample_pdfs/544516929-ICICI-BANK-STATEMENT.pdf'
 sample_headers = {"date": ["date", "txn_date", "transaction_date","tran_date"],
                       "debit": ["debit", "debit_amount", "withdrawal", "dr"],
                       "credit": ["credit", "credit_amount", "deposit", "cr"],
                       "balance": ["balance", "closing_balance", "available_balance"],
                       "description": ["narration", "description", "remarks", "particulars","details"],
-                      "ref_number": ["ref_no", "reference", "chq_no", "cheque_no", 'chq/ref_number','Ref No./Cheque']}
+                      "ref_number": ["ref_no", "reference", "chq_no", "cheque_no", 'chq/ref_number','Ref No./Cheque','chq._no.']}
 def header_detection(pdf_file,sample_headers):
     """
     detect table headers
@@ -35,7 +39,6 @@ def header_detection(pdf_file,sample_headers):
                 temp_header = []
                 temp_header_index = []
                 check_header = [re.sub(r'\s+', '_', (h or '').strip().lower()) for h in line]
-                print(check_header)
                 for inde, da in enumerate(check_header):
                     for k, v in sample_headers.items():
                         if da in v:
@@ -46,6 +49,8 @@ def header_detection(pdf_file,sample_headers):
                 if len(temp_header)>3:
                     cleaned_header=temp_header
                     cleaned_index=temp_header_index
+                    if narration_index is not None:
+                        narration_index=cleaned_index.index(narration_index)
                     logger.info(f"header found in {cleaned_header}")
                     break
         if cleaned_header:
@@ -66,15 +71,16 @@ def extract_row(pdf_file,cleaned_index,checks,narrat_index):
         for ro,line in enumerate(tabl):
             if not line:
                 continue
+            line=[cell if isinstance(cell,str) else '' for cell in line ]
             if any(isinstance(cell,str) and checks.match(cell.strip()) for cell in line):
-                    cleanedline = [line[i].strip() if line[i].strip() else '' for i in cleaned_index]
-                    records.append(cleanedline)
-                    last_record=records[-1]
+                cleanedline = [line[i].strip() if line[i].strip() else '' for i in cleaned_index]
+                records.append(cleanedline)
+                last_record=records[-1]
             elif(narrat_index is not None
                     and last_record is not None
                     and narrat_index<len(line)
                     and isinstance(line[narrat_index],str)
-                    # and all(not(line[i].strip()) for i in range(len(line)) if i != narrat_index)
+                    and all(not(line[i].strip()) for i in range(len(line)) if i != narrat_index)
                     and line[narrat_index].strip()
             ):
                 last_record[narrat_index]+=" "+line[narrat_index].strip()
@@ -151,7 +157,12 @@ def normalised_records(extracted_row,headers,sample_headers):
         reco.pop('debit',None)
         reco.pop('credit',None)
     return final_record
-
+def csv_conversion(final_parsedata): #csv conversion
+    """
+    convert to csv
+    """
+    df=pd.DataFrame(final_parsedata)
+    df.to_csv("pdf_data.csv",index=False)
 def parse_pdf(file_path):
     """
     parse pdf file
@@ -161,12 +172,6 @@ def parse_pdf(file_path):
         extracted_rows=extract_row(pdf_file,indexes,date_check,narrat_index)
         normalised_data=normalised_records(extracted_rows,headers,sample_headers)
     return normalised_data
-def csv_conversion(final_parsedata): #csv conversion
-    """
-    convert to csv
-    """
-    df=pd.DataFrame(final_parsedata)
-    df.to_csv("pdf_data.csv",index=False)
 def main():
     final_parsedata=parse_pdf(file_path)
     print(final_parsedata)
